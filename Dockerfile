@@ -15,10 +15,11 @@ ENV ADB_INSTALL_TIMEOUT=10
 ENV PATH=${PATH}:/opt/buck/bin/
 ENV ANDROID_HOME=/opt/android
 ENV ANDROID_SDK_HOME=${ANDROID_HOME}
-ENV PATH=${PATH}:${ANDROID_HOME}/emulator:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/build-tools/${ANDROID_TOOLS_VERSION}
+ENV PATH=${PATH}:${ANDROID_HOME}/emulator:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
 ENV ANDROID_NDK=/opt/ndk/android-ndk-r$NDK_VERSION
 ENV ANDROID_NDK_HOME=/opt/ndk/android-ndk-r$NDK_VERSION
 ENV PATH=${PATH}:${ANDROID_NDK}
+ENV PATH=${PATH}:${ANDROID_HOME}/build-tools/${ANDROID_TOOLS_VERSION}
 
 # install system dependencies
 RUN apt-get update -qq && apt-get install -qq -y --no-install-recommends \
